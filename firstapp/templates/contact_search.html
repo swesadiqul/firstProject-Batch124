@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load humanize %}
 
 
 
@@ -25,17 +24,11 @@
                     </div>
                   </div>
                     <thead>
-                      <div class="d-flex gap-2">
-                        <a href="/contact/filter/?q=A">A</a>
-                        <a href="/contact/filter/?q=R">R</a>
-                        <a href="/contact/filter/?q=">A</a>
-                      </div>
                       <tr>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Mobile</th>
                         <th>E-mail</th>
-                        <th>Timestamp</th>
                         <th>Subject</th>
                         <th>Message</th>
                         <th class="text-center">Actions</th>
@@ -48,7 +41,6 @@
                         <td>{{ c.name }}</td>
                         <td>{{ c.phone }}</td>
                         <td>{{ c.email }}</td>
-                        <td>{{ c.created_at|naturaltime }}</td>
                         <td>{{ c.subject|truncatechars_html:15 }}</td>
                         <td>{{ c.message|truncatechars_html:15 }}</td>
                         <td class="text-center">
